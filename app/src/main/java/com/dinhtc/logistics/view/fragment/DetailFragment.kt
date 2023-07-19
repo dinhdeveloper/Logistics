@@ -25,10 +25,10 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(){
                 viewBinding.logisticModelView = logisticsModel
             }
 
-            btnHangHoa.safeClickListener {
+            btnHangHoa.setOnClickListener {
                 showDialogAddHangHoa()
             }
-            btnAnh.safeClickListener {
+            btnAnh.setOnClickListener {
                 showDialogAddImage()
             }
         }
@@ -42,9 +42,9 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(){
     }
 
     private fun showDialogAddHangHoa() {
-        val bottomSheetAdd = BottomSheetAddFreight()
-        bottomSheetAdd.isCancelable = false
+        val bottomSheetAdd = context?.let { BottomSheetAddFreight(it) }
+        bottomSheetAdd?.isCancelable = false
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
-        activity?.supportFragmentManager?.let { bottomSheetAdd.show(it, bottomSheetAdd.tag) }
+        activity?.supportFragmentManager?.let { bottomSheetAdd?.show(it, bottomSheetAdd.tag) }
     }
 }

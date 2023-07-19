@@ -80,6 +80,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/btnChooseHangHoa"
                 android:drawableEnd="@drawable/path_4"
                 android:drawablePadding="5dp"
                 android:layout_marginEnd="3dp"
