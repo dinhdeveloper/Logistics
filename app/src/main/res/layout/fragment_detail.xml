@@ -16,6 +16,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,22 +25,22 @@
 
             <TextView
                 android:id="@+id/tvTTDH"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:text="THÔNG TIN ĐƠN HÀNG"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="25sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textSize="30sp"
-                android:text="THÔNG TIN ĐƠN HÀNG"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/layoutViewOne"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/background_item_shadow"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -79,9 +80,9 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.9dp"
                     android:layout_marginHorizontal="15dp"
-                    android:background="#dddddd" />
+                    android:background="@color/color_datroi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -114,9 +115,9 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.9dp"
                     android:layout_marginHorizontal="15dp"
-                    android:background="#dddddd" />
+                    android:background="@color/color_datroi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,7 +154,7 @@
                 android:id="@+id/layoutViewTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
+                android:layout_marginHorizontal="3dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -239,11 +240,11 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:text="25.000.000 VNĐ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="end"
+                        android:text="25.000.000 VNĐ"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         tools:text="NGUYEN NGOC HOANG" />
@@ -252,9 +253,9 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.9dp"
                     android:layout_marginHorizontal="15dp"
-                    android:background="#dddddd" />
+                    android:background="@color/color_datroi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -287,9 +288,9 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.9dp"
                     android:layout_marginHorizontal="15dp"
-                    android:background="#dddddd" />
+                    android:background="@color/color_datroi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -337,7 +338,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="2"
                     android:background="@drawable/bg_item_detail"
                     android:padding="10dp"
@@ -349,7 +350,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="2"
                     android:background="@drawable/bg_item_detail"
                     android:padding="10dp"
@@ -361,7 +362,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="2"
                     android:background="@drawable/bg_item_detail"
                     android:padding="10dp"
@@ -373,7 +374,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="2"
                     android:background="@drawable/bg_item_detail"
                     android:padding="10dp"
@@ -385,7 +386,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_weight="2"
                     android:background="@drawable/bg_item_detail"
                     android:padding="10dp"
@@ -398,8 +399,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="@dimen/height_btn"
                 android:layout_marginTop="20dp"
-                android:layout_height="50dp"
+                android:layout_marginHorizontal="3dp"
                 android:orientation="horizontal"
                 android:weightSum="2"
                 app:layout_constraintBottom_toBottomOf="parent"

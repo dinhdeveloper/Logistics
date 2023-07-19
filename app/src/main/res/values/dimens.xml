@@ -7,4 +7,23 @@
     <dimen name="status_table">60dp</dimen>
     <dimen name="prioritize_table">50dp</dimen>
     <dimen name="layout_wight">120dp</dimen>
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="height_btn">48dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <dimen name="font15_sp">15sp</dimen>
+    <dimen name="font18_sp">18sp</dimen>
+    <dimen name="font20_sp">20sp</dimen>
 </resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UploadDocumentCell">
+        <attr name="iconResId" format="reference"/>
+        <attr name="actionResId" format="reference"/>
+        <attr name="hintResId" format="reference"/>
+    </declare-styleable>
+</resources>
