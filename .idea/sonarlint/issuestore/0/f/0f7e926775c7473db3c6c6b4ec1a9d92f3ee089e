@@ -1,0 +1,12 @@
+
+Mkotlin:S108å")Either remove or fill this block of code.(¤­Êóıÿÿÿÿ8å¯‘˜”1
+Mkotlin:S108æ")Either remove or fill this block of code.(¡¯ÖØúÿÿÿÿ8å¯‘˜”1
+Tkotlin:S1172Ô"4Remove this unused function parameter "edtPassword".(Ÿ•Üµ8æ¯‘˜”1
+Tkotlin:S1172“"4Use "_" instead of this unused lambda parameter "v".(­ëÆã8æ¯‘˜”1
+9kotlin:S1128"Remove this unused import.(üƒŠ¸8Ïõ”˜”1
+9kotlin:S1128"Remove this unused import.(õåŞè8Ïõ”˜”1
+vkotlin:S3776_"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(µƒû‰ûÿÿÿÿ8ï¯‘˜”1
+rkotlin:S117”"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(óÈëª8ï¯‘˜”1
+Rkotlin:S1144Ü"2Remove this unused private "setupObserver" method.(¾­Ëø8ñ¯‘˜”1
+Nkotlin:S1066•".Merge this "if" statement with the nested one.(Õ÷Ø8ò¯‘˜”1
+akotlin:S6510¸"AMove "return" statements from all branches before "if" statement.(•èı8ò¯‘˜”1

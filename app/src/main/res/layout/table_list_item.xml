@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="70dp"
+    android:id="@+id/itemRoot"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="@dimen/id_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="#" />
+
+    <TextView
+        android:id="@+id/txtIdOrder"
+        android:layout_width="@dimen/id_order_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:gravity="center"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Đơn gom" />
+
+    <TextView
+        android:id="@+id/txtLocation"
+        android:layout_width="@dimen/location_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="860/29 Xô Viết Nghệ Tĩnh, phường 25, quận Bình Thạnh, TPHCM" />
+
+    <TextView
+        android:id="@+id/txtPerson"
+        android:layout_width="@dimen/person_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Người" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="@dimen/status_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Tình trạng" />
+
+    <TextView
+        android:id="@+id/txtPrioritize"
+        android:layout_width="@dimen/prioritize_table"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Ưu tiên" />
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="60dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:gravity="center"-->
+    <!--        android:layout_height="match_parent">-->
+    <!--        <ImageView-->
+    <!--            android:id="@+id/txtChecked"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:padding="30dp"-->
+    <!--            android:background="@drawable/table_content_cell_bg"-->
+    <!--            android:src="@drawable/ic_add"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"/>-->
+    <!--    </LinearLayout>-->
+
+</LinearLayout>

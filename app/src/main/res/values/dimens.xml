@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="id_table">50dp</dimen>
+    <dimen name="id_order_table">90dp</dimen>
+    <dimen name="location_table">200dp</dimen>
+    <dimen name="person_table">100dp</dimen>
+    <dimen name="status_table">60dp</dimen>
+    <dimen name="prioritize_table">50dp</dimen>
+    <dimen name="layout_wight">120dp</dimen>
+</resources>
