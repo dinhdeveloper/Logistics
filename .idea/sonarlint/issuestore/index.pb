@@ -75,3 +75,7 @@ y
 Iapp/src/main/java/com/dinhtc/logistics/common/view/UploadDocumentImage.kt,8\e\8ef25ac0a43364f02580c3c9832fd2076d2ed29c
 y
 Iapp/src/main/java/com/dinhtc/logistics/bottomsheet/BottomSheetAddImage.kt,2\1\214149cc300d19886bc486fd5bb74c251cef6ecd
+s
+Capp/src/main/java/com/dinhtc/logistics/utils/TranslucentDialog.java,b\f\bf4b2a271dd3499fdace7968cb7481f4f3c6ae76
+m
+=app/src/main/java/com/dinhtc/logistics/utils/DialogFactory.kt,5\2\52903a0cfc5687eff34813706a56a783ab8b1552

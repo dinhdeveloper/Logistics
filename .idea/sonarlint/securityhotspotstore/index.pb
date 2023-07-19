@@ -75,3 +75,7 @@ l
 <app/src/main/java/com/dinhtc/logistics/utils/AndroidUtils.kt,c\b\cb705d3410edc9ed62d1e20f1bf77da4db7d5178
 y
 Iapp/src/main/java/com/dinhtc/logistics/common/view/UploadDocumentImage.kt,8\e\8ef25ac0a43364f02580c3c9832fd2076d2ed29c
+s
+Capp/src/main/java/com/dinhtc/logistics/utils/TranslucentDialog.java,b\f\bf4b2a271dd3499fdace7968cb7481f4f3c6ae76
+m
+=app/src/main/java/com/dinhtc/logistics/utils/DialogFactory.kt,5\2\52903a0cfc5687eff34813706a56a783ab8b1552

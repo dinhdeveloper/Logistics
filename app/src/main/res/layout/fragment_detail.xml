@@ -155,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="3dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutViewOne">
@@ -398,9 +398,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginVertical="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_btn"
-                android:layout_marginTop="20dp"
                 android:layout_marginHorizontal="3dp"
                 android:orientation="horizontal"
                 android:weightSum="2"
@@ -411,26 +411,26 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_button_no_strock"
                     android:gravity="center"
                     android:minWidth="100dp"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:text="Hủy"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_button_no_strock"
                     android:gravity="center"
                     android:minWidth="100dp"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:text="Lưu"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
