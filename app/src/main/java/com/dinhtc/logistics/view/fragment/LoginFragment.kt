@@ -1,8 +1,6 @@
 package com.dinhtc.logistics.view.fragment
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.SharedPreferences
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
@@ -10,20 +8,13 @@ import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.dinhtc.logistics.R
-import com.dinhtc.logistics.common.api.ApiHelperImpl
-import com.dinhtc.logistics.common.api.RetrofitBuilder
-import com.dinhtc.logistics.common.local.DatabaseBuilder
-import com.dinhtc.logistics.common.local.DatabaseHelperImpl
 import com.dinhtc.logistics.common.view.BaseFragment
 import com.dinhtc.logistics.databinding.FragmentLoginBinding
-import com.dinhtc.logistics.utils.DefaultDispatcherProvider
 import com.dinhtc.logistics.utils.SharedPreferencesManager
 import com.dinhtc.logistics.utils.SharedPreferencesManager.*
 import com.dinhtc.logistics.utils.SharedPreferencesManager.Companion.IS_LOGGED_IN
@@ -31,15 +22,15 @@ import com.dinhtc.logistics.utils.SharedPreferencesManager.Companion.LAST_LOGIN_
 import com.dinhtc.logistics.utils.SharedPreferencesManager.Companion.PASS_W
 import com.dinhtc.logistics.utils.SharedPreferencesManager.Companion.USERNAME
 import com.dinhtc.logistics.utils.UiState
-import com.dinhtc.logistics.utils.ViewModelFactory
-import com.dinhtc.logistics.viewmodel.UserViewModel
+import com.dinhtc.logistics.viewmodel.YourViewModel
 import com.google.gson.Gson
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
-    private lateinit var userViewModel: UserViewModel
+    private val subsViewModel: YourViewModel by viewModels()
     private var checkShowEyePass: Boolean = false
 
     override val layoutResourceId: Int
@@ -47,9 +38,27 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     override fun viewCreatedFragment() {
         context?.let { SharedPreferencesManager.init(it) }
-        checkAutoLogin()
-        setupViewModel()
+        //checkAutoLogin()
         actionView()
+
+        // Observe changes in the user data
+        subsViewModel.uiState.observe(this) { uiState ->
+            when (uiState) {
+                is UiState.Success -> {
+                    Log.e("SSSSSSSSSSS", Gson().toJson(uiState.data.data.first()))
+                }
+                is UiState.Error -> {
+                    val errorMessage = uiState.message
+                    Log.e("SSSSSSSSSSS", errorMessage)
+                }
+                UiState.Loading -> {
+                    Toast.makeText(context,"Loading",Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+        // Trigger the data retrieval
+        subsViewModel.fetchDataFromApi()
     }
 
     private fun checkAutoLogin() {
@@ -78,17 +87,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         SharedPreferencesManager.instance.remove(IS_LOGGED_IN)
         SharedPreferencesManager.instance.remove(LAST_LOGIN_TINE)
         // Chuyển đến màn hình đăng nhập
-    }
-
-    private fun setupViewModel() {
-        userViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(
-                ApiHelperImpl(RetrofitBuilder.apiService),
-                DatabaseHelperImpl(DatabaseBuilder.getInstance(activity?.applicationContext!!)),
-                DefaultDispatcherProvider()
-            )
-        )[UserViewModel::class.java]
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -215,22 +213,5 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         SharedPreferencesManager.instance.putBoolean(IS_LOGGED_IN, true)
         SharedPreferencesManager.instance.putLong(LAST_LOGIN_TINE, System.currentTimeMillis())
         findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-    }
-
-    private fun setupObserver() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                userViewModel.uiState.collect {
-                    when (it) {
-                        is UiState.Success -> {
-                            Log.e("SSSSSSSSSSS", "${Gson().toJson(it.data)}")
-                        }
-
-                        is UiState.Loading -> {}
-                        is UiState.Error -> {}
-                    }
-                }
-            }
-        }
     }
 }

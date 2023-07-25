@@ -2,7 +2,7 @@ package com.dinhtc.logistics.utils
 
 sealed interface UiState<out T> {
 
-    data class Success<T>(val data: T) : UiState<T>
+    data class Success<T>(val data: ApiResponse<T>) : UiState<T>
 
     data class Error(val message: String) : UiState<Nothing>
 
