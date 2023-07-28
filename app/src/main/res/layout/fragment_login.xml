@@ -63,6 +63,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edtUsername"
+                    android:text="canhdinh"
                     android:layout_width="match_parent"
                     android:fontFamily="@font/avenir_medium"
                     android:imeOptions="actionNext"
@@ -75,6 +76,16 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_button_strock"
                     android:layout_height="60dp"/>
+                
+                <com.dinhtc.logistics.common.widgets.tagview.TagEditText
+                    android:id="@+id/tagsEditText"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_button_strock"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="20sp"
+                    android:inputType="textEmailAddress" />
 
                 <TextView
                     android:textStyle="bold"
@@ -89,6 +100,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edtPassword"
+                    android:text="123456"
                     android:layout_width="match_parent"
                     android:drawableEnd="@drawable/eye_off"
                     android:textSize="20sp"
@@ -104,7 +116,7 @@
                     android:layout_height="60dp"/>
 
                 <TextView
-                    android:id="@+id/btnStart"
+                    android:id="@+id/btnLogin"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:background="@drawable/bg_button_while"

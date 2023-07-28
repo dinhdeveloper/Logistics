@@ -13,17 +13,11 @@ data class ApiResponse<T>(
     val timestamp: String
 )
 
-fun <T> parseResponse(responseString: String): ApiResponse<T> {
-    // Sử dụng thư viện Gson để parse responseString thành ApiResponse
-    // Giả sử bạn đã có Gson instance
-    val gson = Gson()
-    val typeToken = object : TypeToken<ApiResponse<T>>() {}.type
-    return gson.fromJson(responseString, typeToken)
-}
+data class ApiResponseNoList<T>(
+    val code_status: Int,
+    val data: T?,
+    val result_code: Int,
+    val result_description: String,
+    val timestamp: String
+)
 
-private suspend fun <T> fetchDataFromRemote(responseString: String): ApiResponse<T> = withContext(Dispatchers.IO) {
-    val gson = Gson()
-    //val userListType = object : TypeToken<T>() {}.type
-    val typeToken = object : TypeToken<ApiResponse<T>>() {}.type
-    gson.fromJson(responseString, typeToken)
-}

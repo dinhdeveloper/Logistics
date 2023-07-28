@@ -33,7 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         tableViewAdapter.setOnClickItem(object : TableViewAdapter.OnItemClickListener{
             override fun onClickItem(logisticsModel: LogisticInfoModel?) {
                 if (logisticsModel != null) {
-                    findNavController().navigate(R.id.action_homeFragment_to_detailFragment,
+                    findNavController().navigate(R.id.action_homeFragment_to_addTaskFragment,
                     bundleOf(LOGISTIC_MODEL to logisticsModel)
                     )
                 }

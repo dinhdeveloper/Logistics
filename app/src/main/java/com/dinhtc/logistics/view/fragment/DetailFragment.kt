@@ -9,8 +9,9 @@ import com.dinhtc.logistics.databinding.FragmentDetailBinding
 import com.dinhtc.logistics.model.LogisticInfoModel
 import com.dinhtc.logistics.utils.safeClickListener
 import com.dinhtc.logistics.view.fragment.HomeFragment.Companion.LOGISTIC_MODEL
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DetailFragment : BaseFragment<FragmentDetailBinding>(){
 
     private lateinit var logisticsModel : LogisticInfoModel

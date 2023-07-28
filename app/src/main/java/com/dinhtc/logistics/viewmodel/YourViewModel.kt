@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dinhtc.logistics.model.CustomerModel
 import com.dinhtc.logistics.model.LoginModel
 import com.dinhtc.logistics.service.ApiHelperImpl
 import com.dinhtc.logistics.utils.UiState
@@ -34,6 +35,43 @@ class YourViewModel @Inject constructor(private val apiHelperImpl: ApiHelperImpl
                 }
             } catch (e: Exception) {
                 _uiState.value = UiState.Error("Error message: ${e.message}")
+            }
+        }
+    }
+
+    private val _dataCustomer = MutableLiveData<List<CustomerModel>>()
+    val dataCustomer : LiveData<List<CustomerModel>>
+        get() = _dataCustomer
+
+    fun getListCustomer(){
+        viewModelScope.launch {
+            try {
+                val response = apiHelperImpl.getListCustomer()
+                _dataCustomer.value = response
+            } catch (e: Exception) {
+                Log.d("SSSSSSSSSSSS", e.message.toString())
+            }
+        }
+    }
+
+
+    private val _dataLogin = MutableLiveData<UiState<LoginModel>>()
+    val dataLogin : LiveData<UiState<LoginModel>>
+        get() = _dataLogin
+
+    fun loginUser(userName: String, passWord: String) {
+        viewModelScope.launch {
+            _dataLogin.value = UiState.Loading
+            try {
+                val response = apiHelperImpl.loginUser(userName,passWord)
+                if (response.code_status == 200) {
+                    Log.d("SSSSSSSS", Gson().toJson(response))
+                    _dataLogin.value = UiState.Success(response)
+                } else {
+                    _dataLogin.value = UiState.Error("Error message")
+                }
+            } catch (e: Exception) {
+                _dataLogin.value = UiState.Error("Error message: ${e.message}")
             }
         }
     }

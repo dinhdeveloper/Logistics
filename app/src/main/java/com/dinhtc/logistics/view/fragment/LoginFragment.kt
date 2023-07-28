@@ -1,6 +1,8 @@
 package com.dinhtc.logistics.view.fragment
 
 import android.annotation.SuppressLint
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
@@ -13,8 +15,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.dinhtc.logistics.R
+import com.dinhtc.logistics.adapter.SuggestionAdapter
 import com.dinhtc.logistics.common.view.BaseFragment
 import com.dinhtc.logistics.databinding.FragmentLoginBinding
+import com.dinhtc.logistics.model.SuggestionModel
+import com.dinhtc.logistics.utils.LoadingScreen
 import com.dinhtc.logistics.utils.SharedPreferencesManager
 import com.dinhtc.logistics.utils.SharedPreferencesManager.*
 import com.dinhtc.logistics.utils.SharedPreferencesManager.Companion.IS_LOGGED_IN
@@ -25,13 +30,20 @@ import com.dinhtc.logistics.utils.UiState
 import com.dinhtc.logistics.viewmodel.YourViewModel
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>(){
 
-    private val subsViewModel: YourViewModel by viewModels()
+    private val viewModel: YourViewModel by viewModels()
     private var checkShowEyePass: Boolean = false
+
+    val mTagList: MutableList<SuggestionModel> = mutableListOf()
+    var mTempList: List<SuggestionModel> = ArrayList()
 
     override val layoutResourceId: Int
         get() = R.layout.fragment_login
@@ -42,23 +54,45 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         actionView()
 
         // Observe changes in the user data
-        subsViewModel.uiState.observe(this) { uiState ->
+//        subsViewModel.uiState.observe(this) { uiState ->
+//            when (uiState) {
+//                is UiState.Success -> {
+//                    Log.e("SSSSSSSSSSS", Gson().toJson(uiState.data.data.first()))
+//                }
+//                is UiState.Error -> {
+//                    val errorMessage = uiState.message
+//                    Log.e("SSSSSSSSSSS", errorMessage)
+//                }
+//                UiState.Loading -> {
+//                    Toast.makeText(context,"Loading",Toast.LENGTH_LONG).show()
+//                }
+//            }
+//        }
+//
+//        // Trigger the data retrieval
+//        subsViewModel.fetchDataFromApi()
+
+        viewModel.dataLogin.observe(this){ uiState ->
             when (uiState) {
                 is UiState.Success -> {
+                    LoadingScreen.hideLoading()
                     Log.e("SSSSSSSSSSS", Gson().toJson(uiState.data.data.first()))
                 }
+
                 is UiState.Error -> {
                     val errorMessage = uiState.message
                     Log.e("SSSSSSSSSSS", errorMessage)
                 }
+
                 UiState.Loading -> {
-                    Toast.makeText(context,"Loading",Toast.LENGTH_LONG).show()
+                    LoadingScreen.displayLoadingWithText(
+                        context,
+                        "Please wait...",
+                        false
+                    )
                 }
             }
         }
-
-        // Trigger the data retrieval
-        subsViewModel.fetchDataFromApi()
     }
 
     private fun checkAutoLogin() {
@@ -91,13 +125,18 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun actionView() {
-        viewBinding.btnStart.setOnClickListener {
-            if (checkValidate()){
-                rememberLogin(
-                    viewBinding.edtUsername.text.toString().trim(),
-                    viewBinding.edtPassword.text.toString().trim()
-                )
-            }
+        viewBinding.btnLogin.setOnClickListener {
+//            if (checkValidate()){
+//                rememberLogin(
+//                    viewBinding.edtUsername.text.toString().trim(),
+//                    viewBinding.edtPassword.text.toString().trim()
+//                )
+//
+//            }
+            viewModel.loginUser(
+                viewBinding.edtUsername.text.toString().trim(),
+                viewBinding.edtPassword.text.toString().trim()
+            )
         }
 
         viewBinding.edtUsername.addTextChangedListener(object : TextWatcher {
@@ -176,6 +215,25 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             }
             false
         })
+
+        //viewModel.getListCustomer()
+
+        viewModel.dataCustomer.observe(this){
+            for (user in it) {
+                val id: Int = user.id
+                val name: String = user.name
+                val model = SuggestionModel(user.avatar, id, name, (user.name.lowercase()))
+                mTagList.add(model)
+            }
+
+            if (mTagList.isNotEmpty()){
+                viewBinding.tagsEditText.setTags(mTagList.toList())
+
+                var tagViewAdapter =
+                    context?.let { SuggestionAdapter(it,R.layout.item_user_suggestion ,mTagList.toList()) }
+                viewBinding.tagsEditText.setAdapter(tagViewAdapter)
+            }
+        }
     }
 
     private fun checkValidate(): Boolean {

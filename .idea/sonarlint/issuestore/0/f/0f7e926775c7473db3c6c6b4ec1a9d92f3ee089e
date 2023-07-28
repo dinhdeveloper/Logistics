@@ -1,0 +1,19 @@
+
+Tkotlin:S1172Œ"4Remove this unused function parameter "edtPassword".(Ÿ•Üµ8Ì’…İ™1
+Tkotlin:S1172¸"4Use "_" instead of this unused lambda parameter "v".(­ëÆã8Ì’…İ™1
+>kotlin:S1128"Remove this unused import.(ü‘»¡ıÿÿÿÿ8§÷İ™1
+9kotlin:S1128"Remove this unused import.(åå8§÷İ™1
+9kotlin:S1128"Remove this unused import.(´Ùí8ÏÁ‹İ™1
+>kotlin:S1128!"Remove this unused import.(Ôê³¨ÿÿÿÿÿ8ÏÁ‹İ™1
+>kotlin:S1128""Remove this unused import.(èãÊõûÿÿÿÿ8ÏÁ‹İ™1
+>kotlin:S1128#"Remove this unused import.(Ó¸Ñÿÿÿÿÿ8ÏÁ‹İ™1
+>kotlin:S1128$"Remove this unused import.(£ñ¹¸ûÿÿÿÿ8ÏÁ‹İ™1
+>kotlin:S125"Remove this commented out code.(Š›Ñ‰8Ö’…İ™1
+Ckotlin:S125Û"Remove this commented out code.(ÛâÊªúÿÿÿÿ8Ö’…İ™1
+vkotlin:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(µƒû‰ûÿÿÿÿ8Û’…İ™1
+rkotlin:S117¹"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(óÈëª8Ü’…İ™1
+Wkotlin:S1144b"3Remove this unused private "checkAutoLogin" method.(˜÷ºøÿÿÿÿ8Ş’…İ™1
+Rkotlin:S1144ï"2Remove this unused private "checkValidate" method.(ùŒ¢8ß’…İ™1
+Rkotlin:S1144Œ"2Remove this unused private "rememberLogin" method.(Ÿ•Üµ8ß’…İ™1
+Nkotlin:S1066º".Merge this "if" statement with the nested one.(Õ÷Ø8â’…İ™1
+akotlin:S6510ğ"AMove "return" statements from all branches before "if" statement.(•èı8â’…İ™1

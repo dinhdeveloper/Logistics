@@ -8,9 +8,9 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/bg_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -20,31 +20,179 @@
             app:layout_constraintGuide_percent="0.06" />
 
         <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/guideline1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_medium"
             android:text="Xin Chào Cảnh Dinh"
             android:textColor="@color/black"
-            android:fontFamily="@font/avenir_medium"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline1">
+
+            <TextView
+                android:id="@+id/txtIdOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:text="@string/tim_kiem"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font20_sp"
+                tools:text="Tìm kiếm: " />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioButton
+                    android:id="@+id/radioCuaToi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Cuả tôi"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radioNhom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Của nhóm"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radioTatCaNguoi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tất cả"
+                    android:textSize="@dimen/font20_sp" />
+            </RadioGroup>
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioButton
+                    android:id="@+id/radioChuaXong"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Chưa xong"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radioDaXong"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Đã xong"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radioTatCaTask"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tất cả"
+                    android:textSize="@dimen/font20_sp" />
+            </RadioGroup>
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioButton
+                    android:id="@+id/radio_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Hôm nay"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_b"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hôm qua"
+                    android:textSize="@dimen/font20_sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_c"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tất cả"
+                    android:textSize="@dimen/font20_sp"
+                    android:visibility="invisible" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_marginVertical="10dp"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_no_strock"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:padding="10dp"
+                android:text="Lưu"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:text="@string/danh_sach_cv"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font20_sp"
+                tools:text="Danh sách công việc: [Số lượng]" />
+
+        </LinearLayout>
 
         <!-- Table View-->
         <HorizontalScrollView
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="@+id/guideline1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutSearch">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewMovieList"

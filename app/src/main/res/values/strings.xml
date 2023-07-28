@@ -13,6 +13,10 @@
     <string name="khoi_luong">Khối lượng (Kg):</string>
     <string name="don_gia">Đơn giá:</string>
 
+    <string name="loai_viec">Loại việc:</string>
+    <string name="tim_kiem">Tìm kiếm:</string>
+    <string name="danh_sach_cv">Danh sách công việc: [Số lượng]</string>
+
 
     <string name="da_can">1. Đã cân</string>
     <string name="da_dong_goi">2. Đã đóng gói</string>
