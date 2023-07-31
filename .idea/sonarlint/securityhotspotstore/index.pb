@@ -25,8 +25,6 @@ y
 Iapp/src/main/java/com/dinhtc/logistics/common/view/StickyHeaderAdapter.kt,1\e\1e4b678443b8bcd781087c8fe9a1eb2ea5d1ab84
 v
 Fapp/src/main/java/com/dinhtc/logistics/view/fragment/SplashFragment.kt,b\9\b9ec0a562f7e24b951a5cf852e98078e3b286f83
-q
-Aapp/src/main/java/com/dinhtc/logistics/model/LogisticInfoModel.kt,0\d\0d7987ba2dbc20793772c5fdc5f609e9b647d743
 y
 Iapp/src/main/java/com/dinhtc/logistics/bottomsheet/BottomSheetAddImage.kt,2\1\214149cc300d19886bc486fd5bb74c251cef6ecd
 y
@@ -41,8 +39,6 @@ y
 Iapp/src/main/java/com/dinhtc/logistics/common/local/DatabaseHelperImpl.kt,4\5\458a6cfdd07c438e8438f1ef0482abc5965648d6
 u
 Eapp/src/main/java/com/dinhtc/logistics/common/local/DatabaseHelper.kt,4\0\408180dc92179c234b70a102d3ff6f630a7d1997
-q
-Aapp/src/main/java/com/dinhtc/logistics/viewmodel/UserViewModel.kt,5\a\5afa9944873788e90379fcc2fac639d0880316af
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
@@ -67,8 +63,6 @@ p
 @app/src/main/java/com/dinhtc/logistics/adapter/TagViewAdapter.kt,f\5\f5d2e08960e828d16aae0a9f260ba47359b27815
 v
 Fapp/src/main/java/com/dinhtc/logistics/view/fragment/DetailFragment.kt,6\2\62dff0775065c8ca421e6ac901c49b0acd547789
-t
-Dapp/src/main/java/com/dinhtc/logistics/view/fragment/HomeFragment.kt,f\b\fb30d4e5982f9380cc8f62aa9d4b53c9fddadcfd
 Š
 Zapp/src/main/java/com/dinhtc/logistics/common/widgets/tagview/interfaces/TagInterface.java,2\c\2c523075bffabff2bf40ef06d26a71a1cc74c826
 ‚
@@ -99,27 +93,11 @@ p
 @app/src/main/java/com/dinhtc/logistics/utils/ViewModelFactory.kt,b\c\bcb8773676dd83840d1876ac2e9ae499153c8710
 l
 <app/src/main/java/com/dinhtc/logistics/utils/StatusResult.kt,e\d\ed40f9fb5acc6ab49382e2d8371341b28ef7dc42
-u
-Eapp/src/main/java/com/dinhtc/logistics/common/di/ApplicationModule.kt,4\8\48c1ed7848432ffa4c84d3f4fa8f408a4962bcae
 m
 =app/src/main/java/com/dinhtc/logistics/model/CustomerModel.kt,4\1\414bfa41a7004767af8298d0421345b025adc3f3
 l
 <app/src/main/java/com/dinhtc/logistics/model/LoginRequest.kt,e\3\e3a96ed2b98415604cfd79d9b75ef97fc72784f7
 j
 :app/src/main/java/com/dinhtc/logistics/model/LoginModel.kt,f\7\f7676e6792d661112fcb774b4d589a04daeaf4fe
-k
-;app/src/main/java/com/dinhtc/logistics/utils/ApiResponse.kt,6\6\663ab0b21e1ec59f6a5ffaf23e63ca514b1814f8
 g
 7app/src/main/java/com/dinhtc/logistics/utils/UiState.kt,1\8\18f06edebd7be74197e17db7a792060d3f66bca4
-q
-Aapp/src/main/java/com/dinhtc/logistics/viewmodel/YourViewModel.kt,d\6\d6e3fab2683cecd38144530bcc7cd02ecf4b10c6
-o
-?app/src/main/java/com/dinhtc/logistics/service/ApiHelperImpl.kt,c\4\c4f3861167f902feb29fa3cd347ab426846e1221
-l
-<app/src/main/java/com/dinhtc/logistics/service/ApiService.kt,a\e\aee9552ca00f8f732f29c4c01ddbcf83f7c86e6b
-k
-;app/src/main/java/com/dinhtc/logistics/service/ApiHelper.kt,2\4\24727ed52aae3683dbc054e3f2595aed1253dca1
-m
-=app/src/main/java/com/dinhtc/logistics/utils/LoadingScreen.kt,4\c\4cb688e338a3455570dabf61a09368414a22eb2e
-u
-Eapp/src/main/java/com/dinhtc/logistics/view/fragment/LoginFragment.kt,0\f\0f7e926775c7473db3c6c6b4ec1a9d92f3ee089e

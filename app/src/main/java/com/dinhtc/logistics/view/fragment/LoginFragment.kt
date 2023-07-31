@@ -50,7 +50,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(){
 
     override fun viewCreatedFragment() {
         context?.let { SharedPreferencesManager.init(it) }
-        //checkAutoLogin()
+        checkAutoLogin()
         actionView()
 
         // Observe changes in the user data
@@ -77,6 +77,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(){
                 is UiState.Success -> {
                     LoadingScreen.hideLoading()
                     Log.e("SSSSSSSSSSS", Gson().toJson(uiState.data.data.first()))
+
+                    rememberLogin(
+                        viewBinding.edtUsername.text.toString().trim(),
+                        viewBinding.edtPassword.text.toString().trim()
+                    )
                 }
 
                 is UiState.Error -> {

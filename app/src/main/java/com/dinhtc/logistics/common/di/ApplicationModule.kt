@@ -19,7 +19,7 @@ import javax.inject.Singleton
 class ApplicationModule {
 
     @Provides
-    fun provideBaseUrl() = "http://192.168.1.153:8080/api/v1/" //192.168.1.6  192.168.1.153
+    fun provideBaseUrl() = "http://192.168.1.124:8080/api/v1/" //192.168.1.6  192.168.1.153
     //https://5e510330f2c0d300147c034c.mockapi.io/users
     @Provides
     @Singleton
